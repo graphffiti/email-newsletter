@@ -42,7 +42,7 @@ async fn main() -> std::io::Result<()> {
                     "<!DOCTYPE html>
                     <html>
                     <head>
-                        <title>Page Title</title>
+                        <title>Page AWESOME Title</title>
                     </head>
                     <body>
                         
