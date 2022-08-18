@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
 
     - name: Cache Cargo Dependencies
       id: cache-build 
@@ -29,6 +28,8 @@ jobs:
           target/
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
-      - name: Build
-        if: steps.cache-build.outputs.cache-hit != 'true'
-        run: cargo build --verbose
+
+    - name: Build
+      uses: actions/checkout@v3
+      if: steps.cache-build.outputs.cache-hit != 'true'
+      run: cargo build --verbose
