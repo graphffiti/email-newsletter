@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+    - uses: actions/checkout@v3
     - name: Cache Cargo Dependencies
       id: cache-build 
       uses: actions/cache@v3
@@ -30,6 +30,5 @@ jobs:
 
 
     - name: Build
-      uses: actions/checkout@v3
       if: steps.cache-build.outputs.cache-hit != 'true'
       run: cargo build --verbose
