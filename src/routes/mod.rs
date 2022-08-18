@@ -13,7 +13,7 @@ pub fn config(config: &mut web::ServiceConfig) {
                 "<!DOCTYPE html>
                 <html>
                 <head>
-                    <title>Page AWESOME Title</title>
+                    <title>Page MOST AWESOME Title</title>
                 </head>
                 <body>
                     
