@@ -30,5 +30,4 @@ jobs:
 
 
     - name: Build
-      if: steps.cache-build.outputs.cache-hit != 'true'
       run: cargo build --verbose
