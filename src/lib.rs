@@ -2,10 +2,11 @@ mod routes;
 use actix_files::NamedFile;
 use actix_web::dev::Server;
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
+use std::net::TcpListener;
 
-pub fn run() -> std::io::Result<Server> {
+pub fn run(listener: TcpListener) -> std::io::Result<Server> {
     let server = HttpServer::new(|| App::new().configure(routes::config))
-        .bind(("0.0.0.0", 8080))?
+        .listen(listener)?
         .run();
 
     Ok(server)
